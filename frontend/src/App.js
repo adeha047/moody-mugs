@@ -1,6 +1,6 @@
 
 
-function App() {
+const App = () => {
   return (
     <>
     <h1> Welcome to Moody Mugs</h1>
