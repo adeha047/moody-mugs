@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "ecommerce app",
+  "main": "server.js",
+  "repository": "git@github.com:adeha047/moody-mugs.git",
+  "author": "Andrew DeHaven <dehaven7777@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
