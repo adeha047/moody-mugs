@@ -4,12 +4,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node JS-backend/server"
-    
   },
   "repository": "git@github.com:adeha047/moody-mugs.git",
   "author": "adeha047 <dehaven7777@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7"
   }
 }
