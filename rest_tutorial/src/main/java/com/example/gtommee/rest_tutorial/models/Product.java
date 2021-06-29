@@ -1,7 +1,7 @@
-package com.mugsy.mugs.models;
+package com.example.gtommee.rest_tutorial.models;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-public class Products {
+public class Product {
   @Id
   public ObjectId _id;
   public String name;
@@ -13,8 +13,8 @@ public class Products {
 
 
   // Constructors
-  public Products() {}
-  public Products(ObjectId _id, String name, String species, String breed) {
+  public Product() {}
+  public Product(ObjectId _id, String name, String species, String breed) {
     this._id = _id;
     this.name = name;
     this.image = image;
@@ -31,7 +31,7 @@ public class Products {
   public String getImage() { return image; }
   public void setImage(String image) { this.image = image;}
   public String getDescription() { return description; }
-  public void setDescription(String description) { this.description = description}
+  public void setDescription(String description) { this.description = description;}
   public Number getPrice() { return price; }
   public void setPrice(String price) { this.price = price; }
   public Number getRating() { return rating; }
