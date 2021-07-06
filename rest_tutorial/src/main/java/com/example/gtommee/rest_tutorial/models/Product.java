@@ -33,9 +33,9 @@ public class Product {
   public String getDescription() { return description; }
   public void setDescription(String description) { this.description = description;}
   public Number getPrice() { return price; }
-  public void setPrice(String price) { this.price = price; }
+  public void setPrice(Number price) { this.price = price; }
   public Number getRating() { return rating; }
-  public void setRating(String rating) { this.rating = rating; }
+  public void setRating(Number rating) { this.rating = rating; }
   public Number getNumReviews() { return numReviews; }
-  public void setNumReviews(String numReviews) { this.numReviews = numReviews; }
+  public void setNumReviews(Number numReviews) { this.numReviews = numReviews; }
 }

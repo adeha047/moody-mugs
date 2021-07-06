@@ -1,6 +1,6 @@
 package com.example.gtommee.rest_tutorial;
 import com.example.gtommee.rest_tutorial.models.Product;
-import com.example.gtommee.rest_tutorial.repositories.Repository;
+import com.example.gtommee.rest_tutorial.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,8 +20,8 @@ public List<Product> getAllProduct() {
   return repository.findAll();
 }
 
-@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-public Product getProductById(@PathVariable("id") ObjectId id) {
-  return repository.findBy_id(id);
-}
+// @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+// public Product getProductById(@PathVariable("id") ObjectId id) {
+//   return repository.findBy_id(id);
+// }
 }
