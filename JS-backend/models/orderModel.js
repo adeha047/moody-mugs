@@ -66,14 +66,12 @@ const orderSchema = mongoose.Schema(
       deliveredAt: { 
         type: Date
     },
-    
-
   },
   {
     timestamps: true,
   }
 );
 
-const User = mongoose.model("User", userSchema);
+const Order = mongoose.model('Order', orderSchema);
 
-export default User;
+export default Order;
