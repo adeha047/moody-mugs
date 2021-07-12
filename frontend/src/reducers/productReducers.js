@@ -9,4 +9,4 @@ export const productReducer = (state = { products: [] }, action) => {
     default:
       return state;
   }
-};
+}
