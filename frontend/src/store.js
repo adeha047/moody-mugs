@@ -7,6 +7,6 @@ const reducer = combineReducers({})
 
 const initialState = {}
 
-const store = createStore(reducer, initalState, composeWithDevTools(applyMiddleware([...middleware])))
+const store = createStore(reducer, initalState, composeWithDevTools(applyMiddleware(...middleware)))
 
 export default store
