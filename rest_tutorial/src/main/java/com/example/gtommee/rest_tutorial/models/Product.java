@@ -10,11 +10,9 @@ public class Product {
   public Number price;
   public Number rating;
   public Number numReviews;
-
-
   // Constructors
   public Product() {}
-  public Product(ObjectId _id, String name, String species, String breed) {
+  public Product(ObjectId _id, String name, String image, String description, Number price, Number rating, Number numReviews) {
     this._id = _id;
     this.name = name;
     this.image = image;

@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
+import org.bson.types.ObjectId;
 
 @RestController
 @RequestMapping("/product")
 public class ProductController {
   @Autowired
   private ProductRepository repository;
-@RequestMapping(value = "/", method = RequestMethod.GET)
-public List<Product> getAllProduct() {
-  return repository.findAll();
-}
-
-// @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-// public Product getProductById(@PathVariable("id") ObjectId id) {
-//   return repository.findBy_id(id);
-// }
+  @RequestMapping(value = "/", method = RequestMethod.GET)
+  public List<Product> getAllProducts() {
+    return repository.findAll();
+  }
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public Product getProductById(@PathVariable("id") ObjectId id) {
+    return repository.findBy_id(id);
+  }
 }
