@@ -4,12 +4,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node JS-backend/server",
-    "server": "nodemon JS-backend/server",
-    "client": "yarn start --prefix frontend",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "data:import": "node S-backend/seeder",
-    "data:destroy": "node backend/seeder-d"
+    "start": "node server",
+    "server": "nodemon server",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder-d"
   },
   "repository": "git@github.com:adeha047/moody-mugs.git",
   "author": "adeha047 <dehaven7777@gmail.com>",
