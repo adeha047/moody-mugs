@@ -7,8 +7,7 @@ import Product from '../models/productModel.js'
 // Fetch all products GET /api/routes
 router.get('/', asyncHandler(async (req, res) => {
     const products = await Product.find({})
-    res.json(products);
-
+    res.json(products)
 }))
 // Fetch one products GET /api/routes
 router.get('/:id', asyncHandler(async (req, res) => {
