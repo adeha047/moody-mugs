@@ -1,9 +1,12 @@
 import express from 'express'
+import expressAsyncHandler from 'expressAsyncHandler'
 const router = express.Router()
+import Product from '../models/productModel'
 
 
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    const products = await Product.find({})
     res.json(products);
 
 })
