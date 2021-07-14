@@ -8,7 +8,7 @@
     "server": "nodemon JS-backend/server",
     "client": "yarn start --prefix frontend",
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "data:import": "node backend/seeder",
+    "data:import": "node S-backend/seeder",
     "data:destroy": "node backend/seeder-d"
   },
   "repository": "git@github.com:adeha047/moody-mugs.git",
