@@ -8,6 +8,8 @@ import { addToCart } from '../actions/cartActions'
 
 const CartScreen = ({ match, location, history }) => {
     const productId = match.params.id
+
+    const qty = location.search
     
     return (
         <div>
