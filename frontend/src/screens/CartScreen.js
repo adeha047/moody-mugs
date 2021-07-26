@@ -9,7 +9,7 @@ import { addToCart } from '../actions/cartActions'
 const CartScreen = ({ match, location, history }) => {
     const productId = match.params.id
 
-    const qty = location.search
+    const qty = Number(location.search ? location.search.split('=')[1] : 1)
     
     return (
         <div>
