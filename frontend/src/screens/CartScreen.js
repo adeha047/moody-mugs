@@ -21,6 +21,10 @@ const CartScreen = ({ match, location, history }) => {
             dispatch(addToCart(productId, qty))
         }
     }, [dispatch, productId, qty])
+
+    const removeFromCart = (id) => {
+        console.log('remove')
+    }
     
     return (
         <Row>
@@ -39,7 +43,7 @@ const CartScreen = ({ match, location, history }) => {
                                     <Link to={`/product/${item.product}`}>{itme.name}</Link>
                                 </Col>
                                 <Col md={2}>{item.price}</Col>
-                                <Col md={2}> <Form.Control as='select' value={qty} onChange={(e)  => dispatch(addToCart(item.product, Number(e.target.value)))}>
+                                <Col md={2}> <Form.Control as='select' value={item.qty} onChange={(e)  => dispatch(addToCart(item.product, Number(e.target.value)))}>
                       {[...Array(item.countInStock).keys()].map(x => (
                         <option key={x +1} value={x + 1}>
                           {x +1}
