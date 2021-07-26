@@ -26,7 +26,20 @@ const CartScreen = ({ match, location, history }) => {
         <Row>
             <Col md={8}>
                 <h1>Shopping Cart</h1>
-                {cartItems.length === 0 ? <Message>Your Cart is Empty <Link to='/'>Go Back</Link></Message> : (<ListGroup variant='flush'></ListGroup>)}
+                {cartItems.length === 0 ? <Message>Your Cart is Empty <Link to='/'>Go Back</Link></Message> : (<ListGroup variant='flush'>
+                    {cartItems.map(item => (
+                        <ListGroup.Item key={item.product}>
+                            <Row>
+                                <Col md={2}>
+                                    <Image
+                                        src={item.image} alt={item.name} fluid rounded
+                                    />
+                                </Col>
+                            </Row>
+                        </ListGroup.Item>
+
+                    ))}
+                </ListGroup>)}
 
             </Col>
             <Col md={2}>
