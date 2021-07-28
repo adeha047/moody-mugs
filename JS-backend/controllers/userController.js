@@ -22,4 +22,11 @@ res.json({
 }
 })
 
-export { authUser }
+// Get User Profile that's private access 
+const getUserProfile = asyncHandler(async(req, res) => {
+    res.send('Success')
+    })
+
+export { authUser, getUserProfile }
+
+
