@@ -1,4 +1,5 @@
 import asyncHandler from 'express-async-handler'
+import generateToken from '../utils/generateToken.js'
 import User from '../models/userModel.js'
 
 // Auth user
@@ -12,7 +13,7 @@ res.json({
     _id: user._id,
     name: user.name,
     email: user.isAdmin, 
-    token: null
+    token: generateToken(user_id)
 
 })
 } else{
