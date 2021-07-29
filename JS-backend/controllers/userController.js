@@ -19,7 +19,26 @@ const authUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error("Invalid email or password");
   }
-});
+})
+//Register new User 
+const registerUser = asyncHandler(async (req, res) => {
+    const { name, email, password } = req.body;
+  
+    const userExists = await User.findOne({ email });
+
+    if(userExists) {
+        res.status(400)
+        throw new Error('User Already Exists')
+    }
+
+    const user = await User.create({ 
+        name, 
+        email, 
+        password 
+    })
+  
+    
+  })
 
 // Get User Profile that's private access
 const getUserProfile = asyncHandler(async (req, res) => {
