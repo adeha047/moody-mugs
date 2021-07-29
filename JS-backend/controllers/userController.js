@@ -36,6 +36,18 @@ const registerUser = asyncHandler(async (req, res) => {
         email, 
         password 
     })
+
+    if(user) {
+        res.status(201).json({
+            _id: user._id,
+            name: user.name,
+            email: user.isAdmin,
+            token: generateToken(user_id),
+        })
+    } else{
+        res.status(400)
+        throw new Error('Invalid user data')
+    }
   
     
   })
@@ -56,4 +68,4 @@ const getUserProfile = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser, getUserProfile };
+export { authUser, registerUser, getUserProfile };
