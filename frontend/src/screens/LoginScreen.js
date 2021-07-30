@@ -15,13 +15,15 @@ const loginScreen = () => {
     <FormContainer>
       <h1> Sign In </h1>
       <Form onSubmit={submitHandler}>
-        <Form.Label>Email Address</Form.Label>
-        <Form.Control
-          type="email"
-          placeholder="Enter email"
-          value={email}
-          onChange={(e = setEmail(e.target.value))}
-        ></Form.Control>
+        <Form.Group>
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e = setEmail(e.target.value))}
+          ></Form.Control>
+        </Form.Group>
       </Form>
     </FormContainer>
   );
