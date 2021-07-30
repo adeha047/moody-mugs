@@ -7,6 +7,9 @@ import Loader from "../components/Loader"
 import { login } from "actions/userActions"
 
 const loginScreen = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    
     return (
         <div>
             
