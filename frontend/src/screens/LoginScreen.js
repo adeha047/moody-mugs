@@ -1,20 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import Message from "../components/Message"
-import Loader from "../components/Loader"
-import { login } from "actions/userActions"
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+import FormContainer from "../components/FormContainer";
+import { login } from "actions/userActions";
 
 const loginScreen = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export default loginScreen
+  return (
+    <FormContainer>
+      <h1> Sign In </h1>
+      <Form onSubmit={submitHandler}>
+        <Form.Label>Email Address</Form.Label>
+        <Form.Control
+          type="email"
+          placeholder="Enter email"
+          value={email}
+          onChange={(e = setEmail(e.target.value))}
+        ></Form.Control>
+      </Form>
+    </FormContainer>
+  );
+};
+
+export default loginScreen;
