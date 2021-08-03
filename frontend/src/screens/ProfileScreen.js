@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { Form, Button, Row, Col } from "react-bootstrap";
-import Message from "../components/Message";
-import Loader from "../components/Loader";
-import { getUserDetails } from "actions/userActions";
+import React, { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Form, Button, Row, Col } from "react-bootstrap"
+import Message from "../components/Message"
+import Loader from "../components/Loader"
+import { getUserDetails } from "../actions/userActions"
 
 const ProfileScreen = ({ location, history }) => {
-  const [email, setName] = useState(" ")
+  const [name, setName] = useState(" ")
   const [email, setEmail] = useState(" ")
   const [password, setPassword] = useState(" ")
   const [confirmPassword, setConfirmPassword] = useState(" ")
@@ -34,7 +33,7 @@ const ProfileScreen = ({ location, history }) => {
 
         }
     }
-  }, [dispatch, history, userInfo])
+  }, [dispatch, history, userInfo, user])
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -60,7 +59,7 @@ const ProfileScreen = ({ location, history }) => {
             type="name"
             placeholder="Enter name"
             value={name}
-            onChange={(e = setName(e.target.value))}
+            onChange={e => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 

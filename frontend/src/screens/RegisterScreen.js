@@ -5,10 +5,10 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { register } from "actions/userActions";
+import { register } from "../actions/userActions";
 
 const RegisterScreen = ({ location, history }) => {
-  const [email, setName] = useState(" ")
+  const [name, setName] = useState(" ")
   const [email, setEmail] = useState(" ")
   const [password, setPassword] = useState(" ")
   const [confirmPassword, setConfirmPassword] = useState(" ")
@@ -50,7 +50,7 @@ const RegisterScreen = ({ location, history }) => {
             type="name"
             placeholder="Enter name"
             value={name}
-            onChange={(e = setName(e.target.value))}
+            onChange={e => setName(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -60,7 +60,7 @@ const RegisterScreen = ({ location, history }) => {
             type="email"
             placeholder="Enter email"
             value={email}
-            onChange={(e = setEmail(e.target.value))}
+            onChange={e => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -70,7 +70,7 @@ const RegisterScreen = ({ location, history }) => {
             type="password"
             placeholder="Enter password"
             value={password}
-            onChange={(e = setPassword(e.target.value))}
+            onChange={e => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -80,7 +80,7 @@ const RegisterScreen = ({ location, history }) => {
             type="password"
             placeholder="Confirm password"
             value={confirmPassword}
-            onChange={(e = setconfirmPassword(e.target.value))}
+            onChange={e => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 

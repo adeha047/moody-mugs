@@ -5,7 +5,7 @@ import { productListReducer, productDetailsReducer } from './reducers/productRed
 import { cartReducer } from './reducers/cartReducers'
 import { userLoginReducer, userRegisterReducer, userDetailsReducer } from './reducers/userReducers'
 
-import { middleware } from 'yargs'
+// import { middleware } from 'yargs'
 
 const reducer = combineReducers({
     productList: productListReducer,
