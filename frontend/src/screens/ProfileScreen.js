@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import FormContainer from "../components/FormContainer";
-import { register } from "actions/userActions";
+import { getUserDetails } from "actions/userActions";
 
-const RegisterScreen = ({ location, history }) => {
+const ProfileScreen = ({ location, history }) => {
   const [email, setName] = useState(" ")
   const [email, setEmail] = useState(" ")
   const [password, setPassword] = useState(" ")
@@ -16,30 +15,41 @@ const RegisterScreen = ({ location, history }) => {
 
   const dispatch = useDispatch();
 
-  const userRegisterReducer = useSelector((state) => state.userRegisterReducer);
-  const { loading, error, userInfo } = userRegisterReducer;
+  const userDetails = useSelector((state) => state.userDetails)
+  const { loading, error, user } = userDetails
 
-  const redirect = location.search ? location.search.split("=")[1] : "/";
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
 
   useEffect(() => {
-    if (userInfo) {
-      history.push(redirect);
+    if (!userInfo) {
+      history.push('/login');
+    } else{
+        if(!user.name) {
+            dispatch(getUserDetails('profile'))
+
+        } else { 
+            setName(user.name)
+            setEmail(user.email)
+
+        }
     }
-  }, [history, userInfo, redirect])
+  }, [dispatch, history, userInfo])
 
   const submitHandler = (e) => {
     e.preventDefault()
     if(password !== confirmPassword) {
         setMessage('Passwords do not match')
     } else {
-        dispatch(register(name, email, password))
+        //DISPATCH UPDATE PROFILE
     }
    
   }
 
   return (
-    <FormContainer>
-      <h1> Sign Up </h1>
+  <Row>
+      <Col md={3}>
+      <h2> User Profile </h2>
       {message && <Message variant="danger"> {message}</Message>}
       {error && <Message variant="danger"> {error}</Message>}
       {loading && <Loader />}
@@ -86,21 +96,18 @@ const RegisterScreen = ({ location, history }) => {
 
         <Button type="submit" variant="primary">
           {" "}
-          Register
+          Update
         </Button>
       </Form>
+      </Col>
+      <Col md={9}>
+          <h2>My Orders</h2>
+      </Col>
+  </Row>
+  
+  )
+   
+  
+}
 
-      <Row className="py-3">
-        <Col>
-          Have an Account?{" "}
-          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-            {" "}
-            Login
-          </Link>
-        </Col>
-      </Row>
-    </FormContainer>
-  );
-};
-
-export default RegisterScreen
+export default ProfileScreen
