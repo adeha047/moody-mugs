@@ -43,7 +43,7 @@ const ProfileScreen = ({ location, history }) => {
     if(password !== confirmPassword) {
         setMessage('Passwords do not match')
     } else {
-      dispatch(updateUserProfile({ id: user_id, name, email, password }))
+      dispatch(updateUserProfile({ id: user._id, name, email, password }))
     }
    
   }
@@ -73,7 +73,7 @@ const ProfileScreen = ({ location, history }) => {
             type="email"
             placeholder="Enter email"
             value={email}
-            onChange={(e = setEmail(e.target.value))}
+            onChange={e => setEmail(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -83,7 +83,7 @@ const ProfileScreen = ({ location, history }) => {
             type="password"
             placeholder="Enter password"
             value={password}
-            onChange={(e = setPassword(e.target.value))}
+            onChange={e => setPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -93,7 +93,7 @@ const ProfileScreen = ({ location, history }) => {
             type="password"
             placeholder="Confirm password"
             value={confirmPassword}
-            onChange={(e = setconfirmPassword(e.target.value))}
+            onChange={e => setConfirmPassword(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
