@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS } from "../constants/userConstants"
+import { USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_SUCCESS } from "../constants/userConstants"
 
 export const login = (email, password) => async (dispatch) => {
     try {
@@ -118,16 +118,16 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.put(`/api/users/profile`, config)
+        const { data } = await axios.put(`/api/users/profile`, user, config)
 
         dispatch({ 
-            type: USER_DETAILS_SUCCESS, 
+            type: USER_UPDATE_PROFILE_SUCCESS, 
             payload: data
         })
 
     } catch (error) {
         dispatch({ 
-            type: USER_DETAILS_FAIL, 
+            type: USER_UPDATE_PROFILE_FAIL, 
             payload: error.response && error.response.data.message ? error.response.data.message : error.message, 
         })
 
