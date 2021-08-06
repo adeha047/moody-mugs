@@ -6,15 +6,15 @@ import FormContainer from "../components/FormContainer";
 const ShippingScreen = ({ history }) => {
    
         const [address, setAddress] = useState('')
-        const [city, setcity] = useState('')
+        const [city, setCity] = useState('')
         const [postalCode, setPostalCode] = useState('')
         const [country, setCountry] = useState('')
 
-        return (
-        <div>
-            Shipping
-        </div>
-    )
+        return 
+        <FormContainer> <h1>Shipping</h1>
+        
+        </FormContainer>
+    
 }
 
 export default ShippingScreen
